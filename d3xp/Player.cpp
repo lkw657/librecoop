@@ -4067,11 +4067,26 @@ bool idPlayer::GivePowerUp( int powerup, int time ) {
 			msg.Init( msgBuf, sizeof( msgBuf ) );
 			msg.WriteShort( powerup );
 			msg.WriteBits( 1, 1 );
-			ServerSendEvent( EVENT_POWERUP, &msg, false, -1 );
+			// Slow down time for all players
+			if (powerup == HELLTIME) {
+				for(int i=0; i<gameLocal.numClients; i++) {
+					idPlayer *player = static_cast<idPlayer*>(gameLocal.entities[i]);
+					player->ServerSendEvent( EVENT_POWERUP, &msg, false, -1 );
+				}
+			}
+			else ServerSendEvent( EVENT_POWERUP, &msg, false, -1 );
 		}
 
 		if ( powerup != MEGAHEALTH ) {
-			inventory.GivePowerUp( this, powerup, time );
+			// Want to put in every inventory but only play the sound (later in this function) once
+			if (powerup == HELLTIME) {
+				for(int i=0; i<gameLocal.numClients; i++) {
+					idPlayer *player = static_cast<idPlayer*>(gameLocal.entities[i]);
+					player->inventory.GivePowerUp(player, powerup, time);
+				}
+			}
+			else
+				inventory.GivePowerUp( this, powerup, time ); 	
 		}
 
 		const idDeclEntityDef *def = NULL;
