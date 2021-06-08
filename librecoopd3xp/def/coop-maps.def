@@ -8,6 +8,8 @@ mapDef game/erebus1 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+	"spawn_weapons"	"weapon_pistol,weapon_bloodstone_passive"
+	"spawn_ammo"	"ammo_bullets_small"
 	"size0"		"448018986"
 	"size1"		"434663176"
 	"size2"		"525758846"
@@ -24,7 +26,7 @@ mapDef game/erebus2 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_grabber"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_grabber,weapon_bloodstone_passive"
 	"spawn_ammo"	"ammo_bullets_small,ammo_shells_small"
 
 	"size0"		"170933560"
@@ -43,8 +45,8 @@ mapDef game/erebus3 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_small,ammo_clip_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_small,ammo_clip_small,ammo_bloodstone_small"
 
 	"size0"		"161473928"
 	"size1"		"161473928"
@@ -62,8 +64,8 @@ mapDef game/erebus4 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_bloodstone_small"
 
 	"size0"		"131458679"
 	"size1"		"131458679"
@@ -81,8 +83,8 @@ mapDef game/erebus5 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_bloodstone_small"
 
 	"size0"		"184790674"
 	"size1"		"184790674"
@@ -100,8 +102,8 @@ mapDef game/erebus6 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_bloodstone_small"
 
 	"size0"		"219582793"
 	"size1"		"219582793"
@@ -119,8 +121,8 @@ mapDef game/phobos1 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_bloodstone_small"
 
 	"size0"		"183338527"
 	"size1"		"183338527"
@@ -138,8 +140,8 @@ mapDef game/phobos2 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_small,ammo_bloodstone_small"
 
 	"size0"		"240843377"
 	"size1"		"240856340"
@@ -157,8 +159,8 @@ mapDef game/phobos3 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2,weapon_bloodstone_active3"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_bloodstone_small"
 
 	"size0"		"195141966"
 	"size1"		"195141966"
@@ -176,8 +178,8 @@ mapDef game/phobos4 {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2,weapon_bloodstone_active3"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_small,ammo_bloodstone_small"
 
 	"size0"		"115263820"
 	"size1"		"115263820"
@@ -195,8 +197,8 @@ mapDef game/deltax {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2,weapon_bloodstone_active3"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small,ammo_bloodstone_small"
 
 	"size0"		"135379615"
 	"size1"		"135379615"
@@ -214,8 +216,8 @@ mapDef game/hell {
 	"Coop"			"1"
 	"Survival"		"1"
 
-	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber"
-	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small"
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber,weapon_bloodstone_passive,weapon_bloodstone_active1,weapon_bloodstone_active2,weapon_bloodstone_active3"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small,ammo_bloodstone_small"
 
 	"size0"		"172390352"
 	"size1"		"172592086"
