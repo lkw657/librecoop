@@ -1230,9 +1230,6 @@ idMoveableItem::Pickup
 bool idMoveableItem::Pickup( idPlayer *player ) {
 	
 	bool ret = idItem::Pickup( player );
-	if ( ret ) {
-		trigger->SetContents( 0 );
-	}
 	return ret;
 }
 
