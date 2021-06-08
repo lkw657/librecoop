@@ -4078,7 +4078,7 @@ bool idPlayer::GivePowerUp( int powerup, int time ) {
 		}
 
 		if ( powerup != MEGAHEALTH ) {
-			// Want to put in every inventory but only play the sound (later in this function) once
+			
 			if (powerup == HELLTIME) {
 				for(int i=0; i<gameLocal.numClients; i++) {
 					idPlayer *player = static_cast<idPlayer*>(gameLocal.entities[i]);
@@ -4090,7 +4090,7 @@ bool idPlayer::GivePowerUp( int powerup, int time ) {
 		}
 
 		const idDeclEntityDef *def = NULL;
-
+		gameLocal.DebugPrintf("Player %d got powerup\n", entityNumber);
 		switch( powerup ) {
 			case BERSERK: {
 				if(gameLocal.isMultiplayer && !gameLocal.isClient) {

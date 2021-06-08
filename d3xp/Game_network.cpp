@@ -480,6 +480,7 @@ void idGameLocal::ServerWriteInitialReliableMessages( int clientNum ) {
 			outMsg.WriteBits( event->spawnId, 32 );
 		}
 		outMsg.WriteByte( event->event );
+		outMsg.WriteInt( event->fastTime );
 		outMsg.WriteInt( event->time );
 		outMsg.WriteBits( event->paramsSize, idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
 		if ( event->paramsSize ) {
@@ -532,7 +533,7 @@ void idGameLocal::SaveEntityNetworkEvent( const idEntity *ent, int eventId, cons
 			if ((event->coopId != eventCoopId) || (event->spawnId != eventSpawnId)) {
 				continue;
 			}
-			SetEntityNetEventData(event, eventId, msg, time);
+			SetEntityNetEventData(event, eventId, msg, time, fast.time);
 			return;
 		}
 		event = NULL; //is this necessary of I'm just retarded?
@@ -546,7 +547,7 @@ void idGameLocal::SaveEntityNetworkEvent( const idEntity *ent, int eventId, cons
 		event->spawnId = GetSpawnId( ent );
 	}
 
-	SetEntityNetEventData(event, eventId, msg, time);
+	SetEntityNetEventData(event, eventId, msg, time, fast.time);
 
 	savedEventQueue.Enqueue( event, idEventQueue::OUTOFORDER_IGNORE );
 }
@@ -556,8 +557,9 @@ void idGameLocal::SaveEntityNetworkEvent( const idEntity *ent, int eventId, cons
 idGameLocal::SetEntityNetEventData
 ================
 */
-void idGameLocal::SetEntityNetEventData(entityNetEvent_t* event, int eventId, const idBitMsg* msg, int eventTime) {
+void idGameLocal::SetEntityNetEventData(entityNetEvent_t* event, int eventId, const idBitMsg* msg, int eventTime, int fastTime) {
 	event->event = eventId;
+	event->fastTime = fastTime;
 	event->time = eventTime;
 	if (msg) {
 		event->paramsSize = msg->GetSize();
@@ -884,7 +886,7 @@ void idGameLocal::ServerProcessEntityNetworkEventQueue( void ) {
 	while ( eventQueue.Start() ) {
 		event = eventQueue.Start();
 
-		if ( event->time > time ) {
+		if ( event->fastTime > fast.time ) {
 			break;
 		}
 
@@ -999,6 +1001,7 @@ void idGameLocal::ServerProcessReliableMessage( int clientNum, const idBitMsg &m
 				event->spawnId = msg.ReadBits( 32 );
 			}
 			event->event = msg.ReadByte();
+			event->fastTime = msg.ReadInt();
 			event->time = msg.ReadInt();
 
 			event->paramsSize = msg.ReadBits( idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
@@ -1472,7 +1475,7 @@ void idGameLocal::ClientProcessEntityNetworkEventQueue( void ) {
 		event = eventQueue.Start();
 
 		// only process forward, in order
-		if ( event->time > time ) {
+		if ( event->fastTime > fast.time ) {
 			break;
 		}
 
@@ -1664,6 +1667,7 @@ void idGameLocal::ClientProcessReliableMessage( int clientNum, const idBitMsg &m
 				event->spawnId = msg.ReadBits( 32 );
 			}
 			event->event = msg.ReadByte();
+			event->fastTime = msg.ReadInt();
 			event->time = msg.ReadInt();
 
 			event->paramsSize = msg.ReadBits( idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
@@ -2091,7 +2095,7 @@ void idEventQueue::Enqueue( entityNetEvent_t *event, outOfOrderBehaviour_t behav
 	if ( behaviour == OUTOFORDER_DROP ) {
 		// go backwards through the queue and determine if there are
 		// any out-of-order events
-		while ( end && end->time > event->time ) {
+		while ( end && end->fastTime > event->fastTime ) {
 			entityNetEvent_t *outOfOrder = RemoveLast();
 			common->DPrintf( "WARNING: new event with id %d ( time %d ) caused removal of event with id %d ( time %d ), game time = %d.\n", event->event, event->time, outOfOrder->event, outOfOrder->time, gameLocal.time );
 			Free( outOfOrder );
@@ -2102,7 +2106,7 @@ void idEventQueue::Enqueue( entityNetEvent_t *event, outOfOrderBehaviour_t behav
 		//				 the patch fix.
 		entityNetEvent_t *cur = end;
 		// iterate until we find a time < the new event's
-		while ( cur && cur->time > event->time ) {
+		while ( cur && cur->fastTime > event->fastTime ) {
 			cur = cur->prev;
 		}
 		if ( !cur ) {
@@ -3101,6 +3105,7 @@ void idGameLocal::sendServerOverflowEvents( void )
 		}
 
 		outMsg.WriteByte( serverOverflowEvents[i].event->event );
+		outMsg.WriteInt( serverOverflowEvents[i].event->fastTime );
 		outMsg.WriteInt( serverOverflowEvents[i].event->time );
 		outMsg.WriteBits( serverOverflowEvents[i].event->paramsSize, idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
 		if ( serverOverflowEvents[i].event->paramsSize ) {

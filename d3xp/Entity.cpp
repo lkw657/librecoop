@@ -5774,6 +5774,7 @@ void idEntity::ServerSendEvent( int eventId, const idBitMsg *msg, bool saveEvent
 	}
 
 	outMsg.WriteByte( eventId );
+	outMsg.WriteInt( gameLocal.fast.time );
 	outMsg.WriteInt( gameLocal.time );
 	if ( msg ) {
 		outMsg.WriteBits( msg->GetSize(), idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
@@ -5824,6 +5825,7 @@ void idEntity::ClientSendEvent( int eventId, const idBitMsg *msg ) const {
 	}
 
 	outMsg.WriteByte( eventId );
+	outMsg.WriteInt( gameLocal.fast.time );
 	outMsg.WriteInt( gameLocal.time );
 	if ( msg ) {
 		outMsg.WriteBits( msg->GetSize(), idMath::BitsForInteger( MAX_EVENT_PARAM_SIZE ) );
@@ -5843,6 +5845,7 @@ idEntity::ServerReceiveEvent
 ================
 */
 bool idEntity::ServerReceiveEvent( int event, int time, const idBitMsg &msg ) {
+	SetTimeState(timeGroup);
 	switch( event ) {
 		case EVENT_CLIENTDAMAGE: {
 			int clientEntityNum, damageToInflict, location;
@@ -5873,6 +5876,7 @@ bool idEntity::ClientReceiveEvent( int event, int time, const idBitMsg &msg ) {
 	const idSoundShader	*shader;
 	s_channelType		channel;
 
+	SetTimeState(timeGroup);
 	switch( event ) {
 		case EVENT_STARTSOUNDSHADER: {
 			// the sound stuff would early out
@@ -5980,7 +5984,7 @@ idEntity::DetermineTimeGroup
 ================
 */
 void idEntity::DetermineTimeGroup( bool slowmo ) {
-	if ( slowmo || gameLocal.isMultiplayer ) {
+	if ( slowmo ) {
 		timeGroup = TIME_GROUP1;
 	}
 	else {

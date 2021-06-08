@@ -123,6 +123,7 @@ typedef struct entityNetEvent_s {
 	int						spawnId;
 	int						coopId; //added for coop by stradex
 	int						event;
+	int						fastTime;
 	int						time;
 	int						paramsSize;
 	byte					paramsBuf[MAX_EVENT_PARAM_SIZE];
@@ -744,7 +745,7 @@ private:
 	void					FixScriptsInMapRestart(void); //hack
 	void					FixNoDynamicInteractions(bool isLocalMapRestart); //hack
 	idEntity*				CheckAndGetValidSpawnSpot(idEntity* spotEnt, int spotEntIndex); //hack
-	void					SetEntityNetEventData(entityNetEvent_t* event, int eventId, const idBitMsg* msg, int eventTime);
+	void					SetEntityNetEventData(entityNetEvent_t* event, int eventId, const idBitMsg* msg, int eventTime, int fastTime);
 	void					ProcessEntityReceiveEvent(idEntity* ent, idBitMsg& eventMsg, entityNetEvent_t* event, bool isClientEvent);
 };
 

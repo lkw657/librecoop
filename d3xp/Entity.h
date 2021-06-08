@@ -670,39 +670,35 @@ ID_INLINE SetTimeState::SetTimeState( int timeGroup ) {
 
 ID_INLINE void SetTimeState::PushState( int timeGroup ) {
 
-	// Don't mess with time in Multiplayer
-	if ( !gameLocal.isMultiplayer ) {
+	activated = true;
 
-		activated = true;
-
-		// determine previous fast setting
-		if ( gameLocal.time == gameLocal.slow.time ) {
-			previousFast = false;
-		}
-		else {
+	// determine previous fast setting
+	if ( gameLocal.time == gameLocal.slow.time ) {
+		previousFast = false;
+	}
+	else {
 			previousFast = true;
-		}
+	}
 
-		// determine new fast setting
-		if ( timeGroup ) {
-			fast = true;
-		}
-		else {
-			fast = false;
-		}
+	// determine new fast setting
+	if ( timeGroup ) {
+		fast = true;
+	}
+	else {
+		fast = false;
+	}
 
-		// set correct time
-		if ( fast ) {
-			gameLocal.fast.Get( gameLocal.time, gameLocal.previousTime, gameLocal.msec, gameLocal.framenum, gameLocal.realClientTime );
-		}
-		else {
-			gameLocal.slow.Get( gameLocal.time, gameLocal.previousTime, gameLocal.msec, gameLocal.framenum, gameLocal.realClientTime );
-		}
+	// set correct time
+	if ( fast ) {
+		gameLocal.fast.Get( gameLocal.time, gameLocal.previousTime, gameLocal.msec, gameLocal.framenum, gameLocal.realClientTime );
+	}
+	else {
+		gameLocal.slow.Get( gameLocal.time, gameLocal.previousTime, gameLocal.msec, gameLocal.framenum, gameLocal.realClientTime );
 	}
 }
 
 ID_INLINE SetTimeState::~SetTimeState() {
-	if ( activated && !gameLocal.isMultiplayer ) {
+	if ( activated ) {
 		// set previous correct time
 		if ( previousFast ) {
 			gameLocal.fast.Get( gameLocal.time, gameLocal.previousTime, gameLocal.msec, gameLocal.framenum, gameLocal.realClientTime );
