@@ -1,0 +1,8 @@
+/***********************************
+ Maledict Coop
+ **********************************/
+ 
+entityDef monster_boss_d3xp_maledict_coop {
+	"inherit"					"monster_boss_d3xp_maledict"
+	"allow_fast_monsters"		"0" // To avoid bug related with maledict and fast monsters
+}

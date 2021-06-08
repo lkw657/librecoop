@@ -1,13 +1,3 @@
-mapDef coop/coopbox {
-	"name"		"Coop Testbox"
-	"Deathmatch"		"0"
-	"Team DM"		"0"
-	"Last Man"		"0"
-	"Tourney"		"0"
-	"Coop"			"1"
-}
-
-
 mapDef game/erebus1 {
 	"name"		"#str_00100944"
 	"devname"		"01-EREBUS - LEVEL 1"
@@ -33,6 +23,10 @@ mapDef game/erebus2 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_small"
+
 	"size0"		"170933560"
 	"size1"		"170933560"
 	"size2"		"205683837"
@@ -48,6 +42,10 @@ mapDef game/erebus3 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_small,ammo_clip_small"
+
 	"size0"		"161473928"
 	"size1"		"161473928"
 	"size2"		"204371623"
@@ -63,6 +61,10 @@ mapDef game/erebus4 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large"
+
 	"size0"		"131458679"
 	"size1"		"131458679"
 	"size2"		"153711539"
@@ -78,6 +80,10 @@ mapDef game/erebus5 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_shotgun_double,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large"
+
 	"size0"		"184790674"
 	"size1"		"184790674"
 	"size2"		"218959874"
@@ -93,6 +99,10 @@ mapDef game/erebus6 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small"
+
 	"size0"		"219582793"
 	"size1"		"219582793"
 	"size2"		"254120177"
@@ -108,6 +118,10 @@ mapDef game/phobos1 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small"
+
 	"size0"		"183338527"
 	"size1"		"183338527"
 	"size2"		"231638992"
@@ -123,6 +137,10 @@ mapDef game/phobos2 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_small"
+
 	"size0"		"240843377"
 	"size1"		"240856340"
 	"size2"		"276178450"
@@ -138,6 +156,10 @@ mapDef game/phobos3 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large"
+
 	"size0"		"195141966"
 	"size1"		"195141966"
 	"size2"		"230349531"
@@ -153,6 +175,10 @@ mapDef game/phobos4 {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_small"
+
 	"size0"		"115263820"
 	"size1"		"115263820"
 	"size2"		"135059183"
@@ -168,6 +194,10 @@ mapDef game/deltax {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small"
+
 	"size0"		"135379615"
 	"size1"		"135379615"
 	"size2"		"182203442"
@@ -183,6 +213,10 @@ mapDef game/hell {
 	"Tourney"		"0"
 	"Coop"			"1"
 	"Survival"		"1"
+
+	"spawn_weapons"	"weapon_pistol,weapon_shotgun,weapon_machinegun,weapon_chaingun,weapon_shotgun_double,weapon_plasmagun,weapon_rocketlauncher,weapon_bfg,weapon_grabber"
+	"spawn_ammo"	"ammo_bullets_small,ammo_shells_large,ammo_clip_large,ammo_belt_small,ammo_cells_large,ammo_rockets_large,ammo_bfg_small"
+
 	"size0"		"172390352"
 	"size1"		"172592086"
 	"size2"		"225155513"

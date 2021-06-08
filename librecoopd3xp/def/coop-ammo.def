@@ -12,3 +12,10 @@ entityDef projectile_grenade_coop {
 	"inherit"					"projectile_grenade"
 	"self_clientside"			"0" //added by Stradex
 }
+
+//FIXME: For some reason SSG projectile clientside is not working...
+entityDef projectile_bullet_shotgun_double_coop {
+	"inherit"					"projectile_bullet_shotgun_double"
+	"self_clientside"			"0" //added by Stradex
+	"net_instanthit"			"1" //added by Stradex
+}
